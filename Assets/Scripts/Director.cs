@@ -10,6 +10,8 @@ public class Director : MonoBehaviour {
     public float maxDistFromParent = 2f;
     public float[] rotationValues;
 
+    public OscInterface oscInterface;
+
 
     // on va maintenir nous même une liste de tous les éléments créés
     // "List<>" c'est comme un tableau[], mais dynamique (sa taille peut changer à tout moment)
@@ -22,13 +24,14 @@ public class Director : MonoBehaviour {
        
         //on ajoute un premier élément, à la position du Director
         AddTo(gameObject);
+        oscInterface = GameObject.Find("Osc").GetComponent<OscInterface>();
     }
 
    
     // Update
     void Update()
     {
-        if (Input.GetKey("space")) {
+        if (oscInterface.IsCapacitiveTouched() || Input.GetKey("space")) {
             Grow();
            
             
