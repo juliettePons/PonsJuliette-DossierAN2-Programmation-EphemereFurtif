@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-367602702761775798
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 6c97dd6978e9ad7498a495c70d215acc
+  m_EffectName: Attenuation
+  m_MixLevel: 7d80192b841d53a4eba8a28fb1480834
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &-192295557390565565
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NatureOff
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 03d764fd87930224291ae58e29fd0f2e
+  m_FloatValues:
+    8de98d20bd32d4846bf6c01d0edf7d52: -80
+    4477f6ddc458d4048a3fcf5e50dd5ff0: -80
+  m_TransitionOverrides: {}
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Nature
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 830112884268752007}
+  - {fileID: -192295557390565565}
+  m_StartSnapshot: {fileID: 830112884268752007}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - f1b5ab2fb54736f46b6520f9efad625b
+    - 7bb7e2030325b7543b137fc628c838b1
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 830112884268752007}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: f1b5ab2fb54736f46b6520f9efad625b
+  m_Children:
+  - {fileID: 1652163766615188602}
+  m_Volume: 4477f6ddc458d4048a3fcf5e50dd5ff0
+  m_Pitch: a233797c80f4fc54885070fde8f9beb9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  - {fileID: 3457995722349244651}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 39eaddeff3951d74386f429f5160fc10
+  m_EffectName: Attenuation
+  m_MixLevel: 2234cf78f89f62849bedf17a979a10b1
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &830112884268752007
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NatureOn
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: cbace501534384047b536a9970b9b8fb
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!243 &1652163766615188602
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Nature
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 7bb7e2030325b7543b137fc628c838b1
+  m_Children: []
+  m_Volume: 8de98d20bd32d4846bf6c01d0edf7d52
+  m_Pitch: ae1cfa599194003459afe20da04258eb
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -367602702761775798}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &3457995722349244651
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 9798bc3afac4dac4b893cf78b2eecf8d
+  m_EffectName: Duck Volume
+  m_MixLevel: 61ba4e33420714243b52448241fca009
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: 353f6f67612ee9f478e8df3c6ca3ef94
+  - m_ParameterName: Ratio
+    m_GUID: 312bb9f4e579de7449f3f048752beadb
+  - m_ParameterName: Attack Time
+    m_GUID: 3ecf25a5308bc8748b5be353a1bcfad3
+  - m_ParameterName: Release Time
+    m_GUID: ab6007cf3e9987a4b84d9b83a0f5e243
+  - m_ParameterName: Make-up Gain
+    m_GUID: 64782780d3d5cca4cabd6cc5701290be
+  - m_ParameterName: Knee
+    m_GUID: 23c099f261323da4aaa48fb227ac8b09
+  - m_ParameterName: Sidechain Mix
+    m_GUID: 64403810fcd04fe4c95c204fae090f90
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
