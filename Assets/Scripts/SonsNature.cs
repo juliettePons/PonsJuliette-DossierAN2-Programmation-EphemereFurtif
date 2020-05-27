@@ -9,6 +9,7 @@ public class SonsNature : MonoBehaviour
 
     public AudioClip[] audioSources;
 
+    public OscInterface oscInterface;
     public float transitionTime;
     public AudioMixerSnapshot NatureOnSnapshot;
     public AudioMixerSnapshot NatureOffSnapshot;
@@ -25,21 +26,20 @@ public class SonsNature : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetKey("space"))
+        if (!oscInterface.IsCapacitiveTouched() || !Input.GetKey("space")|| !randomSound.isPlaying)
         {
-            if (!randomSound.isPlaying)
-            {
+           
                 StartCoroutine("playRandSound", 10);
                 NatureOnSnapshot.TransitionTo(transitionTime);
-               
-            }
+
+            
         }
         else
         {
             NatureOffSnapshot.TransitionTo(transitionTime);
             StopCoroutine("playRandSound");
             randomSound.Pause();
-
+            
         }
     }
 

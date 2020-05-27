@@ -12,22 +12,25 @@ public class SonsUbrains : MonoBehaviour
 
     public AudioMixerSnapshot UrbanOnSnapshot;
     public AudioMixerSnapshot UrbanOffSnapshot;
-
+    public OscInterface oscInterface;
     // Use this for initialization
     void Start()
     {
 
-       //CallAudio();
-      
+        //CallAudio();
+        oscInterface = GameObject.Find("Osc").GetComponent<OscInterface>();
     }
 
     private void Update()
     {
-        if (Input.GetKey("space"))
+        if (oscInterface.IsCapacitiveTouched() || Input.GetKey("space"))
         {
-            if (!randomSound.isPlaying) {
-                StartCoroutine("playRandSound", 10);
-                UrbanOnSnapshot.TransitionTo(transitionTime);
+            {
+                if (!randomSound.isPlaying)
+                {
+                    StartCoroutine("playRandSound", 10);
+                    UrbanOnSnapshot.TransitionTo(transitionTime);
+                }
             }
         }
         else
@@ -35,7 +38,7 @@ public class SonsUbrains : MonoBehaviour
             UrbanOffSnapshot.TransitionTo(transitionTime);
             StopCoroutine("playRandSound");
             randomSound.Pause();
-            
+
         }
     }
 
