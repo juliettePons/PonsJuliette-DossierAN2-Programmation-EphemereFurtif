@@ -26,20 +26,21 @@ public class SonsNature : MonoBehaviour
 
     private void Update()
     {
-        if (!oscInterface.IsCapacitiveTouched() || !Input.GetKey("space")|| !randomSound.isPlaying)
+        if (!oscInterface.IsCapacitiveTouched() || !Input.GetKey("space"))
         {
-           
+            if (!randomSound.isPlaying)
+            {
                 StartCoroutine("playRandSound", 10);
                 NatureOnSnapshot.TransitionTo(transitionTime);
-
-            
+               
+            }
         }
         else
         {
             NatureOffSnapshot.TransitionTo(transitionTime);
             StopCoroutine("playRandSound");
             randomSound.Pause();
-            
+
         }
     }
 
