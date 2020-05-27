@@ -8,20 +8,20 @@ public class SonsNature : MonoBehaviour
     public AudioSource randomSound;
 
     public AudioClip[] audioSources;
-
-    public OscInterface oscInterface;
     public float transitionTime;
+
     public AudioMixerSnapshot NatureOnSnapshot;
     public AudioMixerSnapshot NatureOffSnapshot;
 
-    
+    public OscInterface oscInterface;
+
 
     // Use this for initialization
     void Start()
     {
 
         //CallAudio();
-
+        oscInterface = GameObject.Find("Osc").GetComponent<OscInterface>();
     }
 
     private void Update()
@@ -30,18 +30,20 @@ public class SonsNature : MonoBehaviour
         {
             if (!randomSound.isPlaying)
             {
-                StartCoroutine("playRandSound", 10);
-                NatureOnSnapshot.TransitionTo(transitionTime);
-               
+                {
+                    StartCoroutine("playRandSound", 10);
+                    NatureOnSnapshot.TransitionTo(transitionTime);
+                }
             }
         }
-        else
-        {
+            if (oscInterface.IsCapacitiveTouched() || Input.GetKey("space"))
+            { 
+
             NatureOffSnapshot.TransitionTo(transitionTime);
             StopCoroutine("playRandSound");
             randomSound.Pause();
 
-        }
+            }
     }
 
 
