@@ -7,7 +7,7 @@ Voici le procédé à suivre pour réaliser l'installation chez soi:
 2. connecter cet arduino à un moteur rotatif en faisant passer ces branchements par un driver (bigeasydriver par exemple) 
 et connecter ce même driver à une source d'alimentation secteur.
 
-3.Brancher l'arduino au port usb, le reliant ainsi à votre machine.
+3. Brancher l'arduino au port usb, le reliant ainsi à votre machine.
 
 4. Lancer le code arduino, et téléverser en prenant garde à indiquer le bon port et le bon modèle d'arduino.
 
